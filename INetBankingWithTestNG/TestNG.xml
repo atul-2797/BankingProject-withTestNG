@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="INetBankingWithTestNG">
+
+	<listeners>
+		<listener class-name="com.cg.utilities.Reporting"></listener>
+	</listeners>
+
+
+	<test name="Login Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.cg.testCases.TC01_LoginTest_001"></class>  
+			<!---<class name="com.cg.testCases.TC_LoginDDT_002"></class>  -->
+		</classes>
+	</test>
+
+
+</suite>
