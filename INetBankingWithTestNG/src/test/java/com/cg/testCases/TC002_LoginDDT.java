@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import com.cg.pageObjects.LoginPageObjects;
 import com.cg.utilities.XLUtils;
 
-public class TC_LoginDDT_002 extends Base {
+public class TC002_LoginDDT extends Base {
 
 	@Test(dataProvider = "LoginData")
 	public void loginDDT(String user, String pwd) throws InterruptedException, IOException {
@@ -19,23 +19,30 @@ public class TC_LoginDDT_002 extends Base {
 		logger.info("user name provided");
 		lp.setUserPassword(pwd);
 		logger.info("password provided");
+		takeScreenshotOfPage(driver,"TC002_LoginDDT","TC002_LoginDDTScreenshot1");
+		
 		lp.clickLoginButton();
 
 		Thread.sleep(3000);
 
 		if (isAlertPresent() == true) {
+			takeScreenshotOfPage(driver,"TC002_LoginDDT","TC002_LoginDDTScreenshot2");
 			driver.switchTo().alert().accept();// close alert
 			driver.switchTo().defaultContent();
+			takeScreenshotOfPage(driver,"TC002_LoginDDT","TC002_LoginDDTScreenshot3");
 			Assert.assertTrue(false);
-			takeScreenshotOfPage(driver, "LoginTestDD");
+			//takeScreenshotOfPage(driver, "LoginTestDD");
 			logger.warn("Login failed");
 		} else {
+			takeScreenshotOfPage(driver,"TC002_LoginDDT","TC002_LoginDDTScreenshot2");
 			Assert.assertTrue(true);
 			logger.info("Login passed");
 			lp.clickLogoutLink();
 			Thread.sleep(3000);
+			takeScreenshotOfPage(driver,"TC002_LoginDDT","TC002_LoginDDTScreenshot3");
 			driver.switchTo().alert().accept();// close logout alert
 			driver.switchTo().defaultContent();
+			takeScreenshotOfPage(driver,"TC002_LoginDDT","TC002_LoginDDTScreenshot4");
 
 		}
 

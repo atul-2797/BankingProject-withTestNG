@@ -10,8 +10,9 @@
 	<test name="Login Test">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="com.cg.testCases.TC01_LoginTest_001"></class>  
-			<!---<class name="com.cg.testCases.TC_LoginDDT_002"></class>  -->
+			<class name="com.cg.testCases.TC001_LoginTest"></class> 
+			<class name="com.cg.testCases.TC002_LoginDDT"></class>  
+			<class name="com.cg.testCases.TC003_AddNewCustomer"></class> 
 		</classes>
 	</test>
 
